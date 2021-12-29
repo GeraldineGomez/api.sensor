@@ -51,11 +51,11 @@ public class SensorTelemetryService {
     public String createSensorTelemetry( 
       @RequestBody String json) {
         String telemetry = json;
-        SensorTelemetry sensorTelemetry = new SensorTelemetry();
+        /*SensorTelemetry sensorTelemetry = new SensorTelemetry();
         System.out.println("JSON: " +  telemetry);
         sensorTelemetry.setTelemetry(telemetry);
         sensorTelemetry.setCreatedDate(new Date());
-        telemetryRepository.save(sensorTelemetry);
+        telemetryRepository.save(sensorTelemetry); */
         return telemetry;
         
     }
