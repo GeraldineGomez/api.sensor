@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import com.simm.thingsboard.service.model.sensor_telemetry.SensorTelemetry;
 import com.simm.thingsboard.service.model.sensor_telemetry.SensorTelemetryRepository;
@@ -51,11 +50,13 @@ public class SensorTelemetryService {
     @ResponseStatus(HttpStatus.CREATED)
     public String createSensorTelemetry( 
       @RequestBody String json) {
+        String telemetry = json;
         SensorTelemetry sensorTelemetry = new SensorTelemetry();
-        sensorTelemetry.setTelemetry(json);
+        System.out.println("JSON: " +  telemetry);
+        sensorTelemetry.setTelemetry(telemetry);
         sensorTelemetry.setCreatedDate(new Date());
         telemetryRepository.save(sensorTelemetry);
-        return json.toString();
+        return telemetry;
         
     }
 
