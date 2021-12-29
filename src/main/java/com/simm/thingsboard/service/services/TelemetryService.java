@@ -25,8 +25,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @RestController
-@RequestMapping("sensor-telemetry")
-public class SensorTelemetryService {
+@RequestMapping("telemetry")
+public class TelemetryService {
      
     @Autowired
     private SensorTelemetryRepository telemetryRepository;
@@ -51,11 +51,11 @@ public class SensorTelemetryService {
     public String createSensorTelemetry( 
       @RequestBody String json) {
         String telemetry = json;
-        /*SensorTelemetry sensorTelemetry = new SensorTelemetry();
+        SensorTelemetry sensorTelemetry = new SensorTelemetry();
         System.out.println("JSON: " +  telemetry);
         sensorTelemetry.setTelemetry(telemetry);
         sensorTelemetry.setCreatedDate(new Date());
-        telemetryRepository.save(sensorTelemetry); */
+        telemetryRepository.save(sensorTelemetry); 
         return telemetry;
         
     }
